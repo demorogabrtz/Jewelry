@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Update to latest Spell Power Attributes API
+
 # 1.2.4
 
 - Update loot config defaults (to take effect, delete `config/jewelry/loot.json`)
