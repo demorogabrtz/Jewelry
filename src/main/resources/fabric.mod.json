@@ -32,6 +32,6 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "spell_power": "*",
-    "projectile_damage": "*"
+    "ranged_weapon_api": ">=1.1.0"
   }
 }

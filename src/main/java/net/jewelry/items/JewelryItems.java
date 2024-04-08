@@ -1,5 +1,6 @@
 package net.jewelry.items;
 
+import net.fabric_extras.ranged_weapon.api.EntityAttributes_RangedWeapon;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.jewelry.JewelryMod;
@@ -12,7 +13,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.projectile_damage.api.EntityAttributes_ProjectileDamage;
 import net.spell_power.api.SpellPowerMechanics;
 import net.spell_power.api.SpellSchools;
 
@@ -106,7 +106,7 @@ public class JewelryItems {
     // delicate
     public static Entry jade_ring = add(new Identifier(JewelryMod.ID, "jade_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(EntityAttributes_ProjectileDamage.attributeId, tier_1_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_1_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -149,7 +149,7 @@ public class JewelryItems {
     // delicate
     public static Entry jade_necklace = add(new Identifier(JewelryMod.ID, "jade_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(EntityAttributes_ProjectileDamage.attributeId, tier_1_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_1_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -191,7 +191,7 @@ public class JewelryItems {
 
     public static Entry netherite_jade_ring = add(new Identifier(JewelryMod.ID, "netherite_jade_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(EntityAttributes_ProjectileDamage.attributeId, tier_2_bonus)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_2_bonus)
             )
     ));
 
@@ -230,7 +230,7 @@ public class JewelryItems {
 
     public static Entry netherite_jade_necklace = add(new Identifier(JewelryMod.ID, "netherite_jade_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(EntityAttributes_ProjectileDamage.attributeId, tier_2_bonus)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_2_bonus)
             )
     ));
 
@@ -252,6 +252,7 @@ public class JewelryItems {
     private static final ItemConfig.Bonus tier_3_primary_bonus = new ItemConfig.Bonus(tier_3_physical_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE);
 
     private static final float tier_3_spell_multiplier = 0.08F;
+    private static final float tier_3_ranged_multiplier = 0.08F;
     private static final float tier_3_secondary_multiplier = 0.03F;
     private static final ItemConfig.Bonus tier_3_spell_bonus = new ItemConfig.Bonus(tier_3_spell_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE);
 
@@ -298,15 +299,17 @@ public class JewelryItems {
 
     public static Entry unique_archer_ring = add(new Identifier(JewelryMod.ID, "unique_archer_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(EntityAttributes_ProjectileDamage.attributeId, tier_3_physical_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("minecraft:generic.movement_speed", 0.05F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_3_ranged_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier("minecraft:generic.movement_speed", 0.05F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , tier_3_secondary_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
     public static Entry unique_archer_necklace = add(new Identifier(JewelryMod.ID, "unique_archer_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(EntityAttributes_ProjectileDamage.attributeId, tier_3_physical_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("combatroll:count", 1F, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_3_ranged_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier("combatroll:count", 1F, EntityAttributeModifier.Operation.ADDITION),
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , tier_3_secondary_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 

@@ -1,10 +1,8 @@
 package net.jewelry.api;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.projectile_damage.api.EntityAttributes_ProjectileDamage;
 
 import java.util.HashMap;
 
@@ -15,14 +13,7 @@ public class AttributeResolver {
     /**
      * Called upon initialization of this mod.
      */
-    public static void setup() {
-        if (FabricLoader.getInstance().isModLoaded("projectile_damage")) {
-            register(
-                EntityAttributes_ProjectileDamage.attributeId,
-                EntityAttributes_ProjectileDamage.GENERIC_PROJECTILE_DAMAGE
-            );
-        }
-    }
+    public static void setup() { }
 
     public static void register(Identifier id, EntityAttribute attribute) {
         attributes.put(id, attribute);
