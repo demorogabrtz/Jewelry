@@ -130,7 +130,7 @@ if(project.hasProperty('release_type')) {
                 requiredDependency 'fabric-api'
                 requiredDependency 'trinkets'
                 requiredDependency 'spell-power'
-                requiredDependency 'ranged_weapon_api'
+                requiredDependency 'ranged-weapon-api'
                 requiredDependency 'structure-pool-api'
             }
 
@@ -160,7 +160,7 @@ if(project.hasProperty('release_type')) {
             required.project "fabric-api"
             required.project "trinkets"
             required.project "spell-power"
-            required.project "ranged_weapon_api"
+            required.project "ranged-weapon-api"
             required.project 'structure-pool-api'
         }
     }
