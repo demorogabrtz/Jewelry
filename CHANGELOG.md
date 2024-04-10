@@ -2,7 +2,7 @@
 
 - Update to latest Spell Power Attributes API
 - Update to latest Ranged Weapon API
-- Archery related unique, now provides draw speed bonus
+- Archery related uniques, now provides draw speed bonus
 
 # 1.2.4
 
