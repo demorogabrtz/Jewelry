@@ -1,3 +1,7 @@
+# 1.3.1
+
+- Update Fabric Loader to 15+ for embedded MixinExtras
+
 # 1.3.0
 
 - Update to latest Spell Power Attributes API
