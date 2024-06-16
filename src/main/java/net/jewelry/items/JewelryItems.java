@@ -272,14 +272,14 @@ public class JewelryItems {
     public static Entry unique_dex_ring = add(new Identifier(JewelryMod.ID, "unique_dex_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("combatroll:recharge", 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier("generic.attack_speed", 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
     public static Entry unique_dex_necklace = add(new Identifier(JewelryMod.ID, "unique_dex_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("combatroll:count", 1F, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier("generic.attack_speed", 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -300,8 +300,8 @@ public class JewelryItems {
     public static Entry unique_archer_ring = add(new Identifier(JewelryMod.ID, "unique_archer_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_3_ranged_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("minecraft:generic.movement_speed", 0.05F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , tier_3_secondary_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier("combatroll:recharge", 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -309,7 +309,7 @@ public class JewelryItems {
             List.of(
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_3_ranged_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
                     new ItemConfig.AttributeModifier("combatroll:count", 1F, EntityAttributeModifier.Operation.ADDITION),
-                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , tier_3_secondary_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
