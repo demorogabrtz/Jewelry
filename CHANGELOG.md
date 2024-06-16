@@ -1,6 +1,7 @@
 # 1.3.1
 
 - Update Fabric Loader to 15+ for embedded MixinExtras
+- Add French translation, thanks to valentin56610
 
 # 1.3.0
 
