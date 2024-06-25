@@ -25,7 +25,7 @@ public class JewelryMod implements ModInitializer {
     public static final String ID = "jewelry";
 
     public static ConfigManager<ItemConfig> itemConfig = new ConfigManager<>
-            ("items_v3", Default.items)
+            ("items_v4", Default.items)
             .builder()
             .setDirectory(ID)
             .sanitize(true)

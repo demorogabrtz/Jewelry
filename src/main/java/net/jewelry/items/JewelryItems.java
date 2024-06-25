@@ -47,18 +47,30 @@ public class JewelryItems {
     private static final float tier_2_multiplier = 0.08F;
     private static final ItemConfig.Bonus tier_2_bonus = new ItemConfig.Bonus(tier_2_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE);
 
+    // Attribute ids
+
+    public static final String GENERIC_ARMOR = "generic.armor";
+    public static final String GENERIC_LUCK = "generic.luck";
+    public static final String GENERIC_MOVEMENT_SPEED = "generic.movement_speed";
+    public static final String GENERIC_ATTACK_DAMAGE = "generic.attack_damage";
+    public static final String GENERIC_MAX_HEALTH = "generic.max_health";
+    public static final String GENERIC_ATTACK_SPEED = "generic.attack_speed";
+    public static final String GENERIC_ARMOR_TOUGHNESS = "generic.armor_toughness";
+    public static final String GENERIC_KNOCKBACK_RESISTANCE = "generic.knockback_resistance";
+    public static final String COMBATROLL_RECHARGE = "combatroll:recharge";
+    public static final String COMBATROLL_COUNT = "combatroll:count";
 
     // MARK: Rings
 
     public static Entry copper_ring = add(new Identifier(JewelryMod.ID, "copper_ring"), new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("generic.armor", 0.5F, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_ARMOR, 0.5F, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
     public static Entry iron_ring = add(new Identifier(JewelryMod.ID, "iron_ring"), new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("generic.armor", 1, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_ARMOR, 1, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
@@ -67,24 +79,27 @@ public class JewelryItems {
             )
     ));
 
+
     public static Entry emerald_necklace = add(new Identifier(JewelryMod.ID, "emerald_necklace"), new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("generic.luck", 1, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_LUCK, 1, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
+
     public static Entry diamond_necklace = add(new Identifier(JewelryMod.ID, "diamond_necklace"), new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("generic.movement_speed", 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(GENERIC_MOVEMENT_SPEED, 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
     // MARK: Custom gem rings
 
+
     // bold
     public static Entry ruby_ring = add(new Identifier(JewelryMod.ID, "ruby_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", tier_1_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_1_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -112,7 +127,7 @@ public class JewelryItems {
 
     public static Entry sapphire_ring = add(new Identifier(JewelryMod.ID, "sapphire_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.max_health", 2, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 2, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
@@ -127,7 +142,7 @@ public class JewelryItems {
 
     public static Entry ruby_necklace = add(new Identifier(JewelryMod.ID, "ruby_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("generic.attack_damage", tier_1_bonus)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_1_bonus)
             )
     ));
 
@@ -155,7 +170,7 @@ public class JewelryItems {
 
     public static Entry sapphire_necklace = add(new Identifier(JewelryMod.ID, "sapphire_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.max_health", 2, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 2, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
@@ -171,7 +186,7 @@ public class JewelryItems {
 
     public static Entry netherite_ruby_ring = add(new Identifier(JewelryMod.ID, "netherite_ruby_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", tier_2_bonus)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_2_bonus)
             )
     ));
 
@@ -197,7 +212,7 @@ public class JewelryItems {
 
     public static Entry netherite_sapphire_ring = add(new Identifier(JewelryMod.ID, "netherite_sapphire_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.max_health", 4, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 4, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
@@ -210,7 +225,7 @@ public class JewelryItems {
 
     public static Entry netherite_ruby_necklace = add(new Identifier(JewelryMod.ID, "netherite_ruby_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("generic.attack_damage", tier_2_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_2_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
@@ -236,7 +251,7 @@ public class JewelryItems {
 
     public static Entry netherite_sapphire_necklace = add(new Identifier(JewelryMod.ID, "netherite_sapphire_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.max_health", 4, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 4, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
@@ -259,48 +274,53 @@ public class JewelryItems {
 
     public static Entry unique_attack_ring = add(new Identifier(JewelryMod.ID, "unique_attack_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", tier_3_primary_bonus)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_3_primary_bonus),
+                    new ItemConfig.AttributeModifier(GENERIC_KNOCKBACK_RESISTANCE, 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
     public static Entry unique_attack_necklace = add(new Identifier(JewelryMod.ID, "unique_attack_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", tier_3_primary_bonus)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_3_primary_bonus),
+                    new ItemConfig.AttributeModifier(GENERIC_KNOCKBACK_RESISTANCE, 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
     public static Entry unique_dex_ring = add(new Identifier(JewelryMod.ID, "unique_dex_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("generic.attack_speed", 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_SPEED, 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(COMBATROLL_RECHARGE, 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
 
+
     public static Entry unique_dex_necklace = add(new Identifier(JewelryMod.ID, "unique_dex_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.attack_damage", 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("generic.attack_speed", 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_SPEED, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(COMBATROLL_COUNT, 1F, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
     public static Entry unique_tank_ring = add(new Identifier(JewelryMod.ID, "unique_tank_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.max_health", 6F, EntityAttributeModifier.Operation.ADDITION),
-                    new ItemConfig.AttributeModifier("minecraft:generic.armor_toughness", 1F, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 6F, EntityAttributeModifier.Operation.ADDITION),
+                    new ItemConfig.AttributeModifier(GENERIC_ARMOR_TOUGHNESS, 1F, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
     public static Entry unique_tank_necklace = add(new Identifier(JewelryMod.ID, "unique_tank_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier("minecraft:generic.max_health", 6F, EntityAttributeModifier.Operation.ADDITION),
-                    new ItemConfig.AttributeModifier("minecraft:generic.armor_toughness", 1F, EntityAttributeModifier.Operation.ADDITION)
+                    new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 6F, EntityAttributeModifier.Operation.ADDITION),
+                    new ItemConfig.AttributeModifier(GENERIC_ARMOR_TOUGHNESS, 1F, EntityAttributeModifier.Operation.ADDITION)
             )
     ));
 
     public static Entry unique_archer_ring = add(new Identifier(JewelryMod.ID, "unique_archer_ring"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_3_ranged_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("combatroll:recharge", 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(COMBATROLL_RECHARGE, 0.1F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));
@@ -308,7 +328,7 @@ public class JewelryItems {
     public static Entry unique_archer_necklace = add(new Identifier(JewelryMod.ID, "unique_archer_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_3_ranged_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),
-                    new ItemConfig.AttributeModifier("combatroll:count", 1F, EntityAttributeModifier.Operation.ADDITION),
+                    new ItemConfig.AttributeModifier(COMBATROLL_COUNT, 1F, EntityAttributeModifier.Operation.ADDITION),
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.HASTE.id , 0.04F, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
     ));

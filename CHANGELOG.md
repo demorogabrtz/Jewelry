@@ -1,3 +1,7 @@
+# 1.3.2
+
+- Update attribute config defaults
+
 # 1.3.1
 
 - Update attribute config defaults
