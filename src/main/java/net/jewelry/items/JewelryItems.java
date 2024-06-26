@@ -297,7 +297,7 @@ public class JewelryItems {
 
     public static Entry unique_dex_necklace = add(new Identifier(JewelryMod.ID, "unique_dex_necklace"), Rarity.RARE, true, new ItemConfig.Item(
             List.of(
-                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_SPEED, 0.08F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
+                    new ItemConfig.AttributeModifier(GENERIC_ATTACK_SPEED, 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
                     new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, 0.06F, EntityAttributeModifier.Operation.MULTIPLY_BASE),
                     new ItemConfig.AttributeModifier(COMBATROLL_COUNT, 1F, EntityAttributeModifier.Operation.ADDITION)
             )
