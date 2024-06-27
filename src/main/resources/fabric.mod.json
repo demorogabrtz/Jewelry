@@ -33,5 +33,12 @@
     "minecraft": "${minecraft_version}",
     "spell_power": "*",
     "ranged_weapon_api": ">=1.1.0"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/KN9b3pjFTM"
+      }
+    }
   }
 }
