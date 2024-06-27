@@ -394,6 +394,10 @@ public class JewelryItems {
             )
     ));
 
+
+
+    // DON'T FORGET LOOT TAGS! T4
+
 //    public static Entry unique_lightning_ring = add(new Identifier(JewelryMod.ID, "unique_lightning_ring"), Rarity.RARE, true, new ItemConfig.Item(
 //            List.of(
 //                    new ItemConfig.AttributeModifier(SpellSchools.LIGHTNING.id, tier_3_spell_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE),

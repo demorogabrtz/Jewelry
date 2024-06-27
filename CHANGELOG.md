@@ -1,3 +1,7 @@
+# 1.3.4
+
+- Loot configuration now via Spell Engine (config file: `config/rpg_series/loot`) 
+
 # 1.3.3
 
 - Update attribute config defaults

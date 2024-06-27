@@ -38,12 +38,12 @@ public class JewelryMod implements ModInitializer {
             .sanitize(true)
             .build();
 
-    public static ConfigManager<LootConfig> lootConfig = new ConfigManager<>
-            ("loot_v2", Default.loot)
-            .builder()
-            .setDirectory(ID)
-            .sanitize(true)
-            .build();
+//    public static ConfigManager<LootConfig> lootConfig = new ConfigManager<>
+//            ("loot_v2", Default.loot)
+//            .builder()
+//            .setDirectory(ID)
+//            .sanitize(true)
+//            .build();
 
     /**
      * Runs the mod initializer.
@@ -53,7 +53,7 @@ public class JewelryMod implements ModInitializer {
         AttributeResolver.setup();
         itemConfig.refresh();
         villageConfig.refresh();
-        lootConfig.refresh();
+//        lootConfig.refresh();
 
         Registry.register(Registries.ITEM_GROUP, Group.KEY, Group.JEWELRY);
         JewelryBlocks.register();
@@ -66,8 +66,8 @@ public class JewelryMod implements ModInitializer {
 
         OreGeneration.register();
         StructurePoolAPI.injectAll(villageConfig.value);
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            LootHelper.configure(id, tableBuilder, JewelryMod.lootConfig.value, JewelryItems.entryMap);
-        });
+//        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+//            LootHelper.configure(id, tableBuilder, JewelryMod.lootConfig.value, JewelryItems.entryMap);
+//        });
     }
 }
