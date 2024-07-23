@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.jewelry.JewelryMod;
 import net.jewelry.items.Group;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.MapColor;
@@ -45,10 +46,12 @@ public class JewelryBlocks {
 
     public static final Entry DEEPSLATE_GEM_VEIN = entry("deepslate_gem_vein", new ExperienceDroppingBlock(
             FabricBlockSettings.create()
-                    .mapColor(MapColor.STONE_GRAY)
                     .instrument(Instrument.BASEDRUM)
                     .requiresTool()
-                    .strength(3.0F, 3.0F),
+                    // DeepSlate specific settings
+                    .mapColor(MapColor.DEEPSLATE_GRAY)
+                    .sounds(BlockSoundGroup.DEEPSLATE)
+                    .strength(4.5F, 3.0F),
             UniformIntProvider.create(3, 7)
     ));
 
