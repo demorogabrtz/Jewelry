@@ -1,3 +1,7 @@
+# 1.3.6
+
+- Fix Deepslate Gem Vein drops as the stone ore variant when mined with Silk Touch #16
+
 # 1.3.5
 
 - Update some translations
