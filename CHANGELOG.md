@@ -1,3 +1,7 @@
+# 1.3.7
+
+- Make Netherite jewelry fireproof
+
 # 1.3.6
 
 - Fix Deepslate Gem Vein drops as the stone ore variant when mined with Silk Touch #16

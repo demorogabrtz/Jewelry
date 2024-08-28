@@ -19,24 +19,32 @@ import net.spell_power.api.SpellSchools;
 import java.util.*;
 
 public class JewelryItems {
-    public record Entry(Identifier id, JewelryItem item, ItemConfig.Item config) {  }
+    public record Entry(Identifier id, JewelryItem item, ItemConfig.Item config, boolean fireproof) {  }
     public static final ArrayList<Entry> all = new ArrayList<>();
     public static final Map<String, Item> entryMap = new HashMap<>();
 
     public static Entry add(Identifier id, ItemConfig.Item config) {
-        return add(id, Rarity.COMMON, config, null);
+        return add(id, Rarity.COMMON, config, null, false);
     }
 
     public static Entry add(Identifier id, Rarity rarity, ItemConfig.Item config) {
-        return add(id, rarity, config, null);
+        return add(id, rarity, config, null, false);
+    }
+
+    public static Entry add(Identifier id, Rarity rarity, ItemConfig.Item config, boolean fireproof) {
+        return add(id, rarity, config, null, fireproof);
     }
 
     public static Entry add(Identifier id, Rarity rarity, boolean addLore, ItemConfig.Item config) {
-        return add(id, rarity, config, addLore ? ("item." + id.getNamespace() + "." + id.getPath() + ".lore") : null);
+        return add(id, rarity, config, addLore ? ("item." + id.getNamespace() + "." + id.getPath() + ".lore") : null, false);
     }
 
-    public static Entry add(Identifier id, Rarity rarity, ItemConfig.Item config, String lore) {
-        var entry = new Entry(id, new JewelryItem(new FabricItemSettings().rarity(rarity), lore), config);
+    public static Entry add(Identifier id, Rarity rarity, ItemConfig.Item config, String lore, boolean fireproof) {
+        var settings = new FabricItemSettings().rarity(rarity);
+        if (fireproof) {
+            settings = settings.fireproof();
+        }
+        var entry = new Entry(id, new JewelryItem(settings, lore), config, fireproof);
         all.add(entry);
         entryMap.put(id.toString(), entry.item());
         return entry;
@@ -188,79 +196,79 @@ public class JewelryItems {
             List.of(
                     new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_topaz_ring = add(new Identifier(JewelryMod.ID, "netherite_topaz_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(SpellSchools.ARCANE.id, tier_2_bonus),
                     new ItemConfig.AttributeModifier(SpellSchools.FIRE.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_citrine_ring = add(new Identifier(JewelryMod.ID, "netherite_citrine_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(SpellSchools.HEALING.id, tier_2_bonus),
                     new ItemConfig.AttributeModifier(SpellSchools.LIGHTNING.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_jade_ring = add(new Identifier(JewelryMod.ID, "netherite_jade_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_sapphire_ring = add(new Identifier(JewelryMod.ID, "netherite_sapphire_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 4, EntityAttributeModifier.Operation.ADDITION)
             )
-    ));
+    ), true);
 
     public static Entry netherite_tanzanite_ring = add(new Identifier(JewelryMod.ID, "netherite_tanzanite_ring"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(SpellSchools.FROST.id, tier_2_bonus),
                     new ItemConfig.AttributeModifier(SpellSchools.SOUL.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_ruby_necklace = add(new Identifier(JewelryMod.ID, "netherite_ruby_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(GENERIC_ATTACK_DAMAGE, tier_2_multiplier, EntityAttributeModifier.Operation.MULTIPLY_BASE)
             )
-    ));
+    ), true);
 
     public static Entry netherite_topaz_necklace = add(new Identifier(JewelryMod.ID, "netherite_topaz_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(SpellSchools.ARCANE.id, tier_2_bonus),
                     new ItemConfig.AttributeModifier(SpellSchools.FIRE.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_citrine_necklace = add(new Identifier(JewelryMod.ID, "netherite_citrine_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(SpellSchools.HEALING.id, tier_2_bonus),
                     new ItemConfig.AttributeModifier(SpellSchools.LIGHTNING.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_jade_necklace = add(new Identifier(JewelryMod.ID, "netherite_jade_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(EntityAttributes_RangedWeapon.DAMAGE.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     public static Entry netherite_sapphire_necklace = add(new Identifier(JewelryMod.ID, "netherite_sapphire_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(GENERIC_MAX_HEALTH, 4, EntityAttributeModifier.Operation.ADDITION)
             )
-    ));
+    ), true);
 
     public static Entry netherite_tanzanite_necklace = add(new Identifier(JewelryMod.ID, "netherite_tanzanite_necklace"), Rarity.UNCOMMON, new ItemConfig.Item(
             List.of(
                     new ItemConfig.AttributeModifier(SpellSchools.FROST.id, tier_2_bonus),
                     new ItemConfig.AttributeModifier(SpellSchools.SOUL.id, tier_2_bonus)
             )
-    ));
+    ), true);
 
     // MARK: Unique pieces
     private static final float tier_3_physical_multiplier = 0.12F;
