@@ -467,13 +467,13 @@ public class JewelryItems {
                 }
             }
             var settings = new Item.Settings()
-                    .attributeModifiers(attributes.build())
                     .rarity(entry.rarity);
             if (entry.fireproof()) {
                 settings.fireproof();
             }
 
             var item = entry.factory.create(settings, entry.lore());
+            item.setConfigurableModifiers(attributes.build());
 
             Registry.register(Registries.ITEM, entry.id(), item);
 
