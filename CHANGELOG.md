@@ -3,6 +3,7 @@
 - Update to Minecraft 1.21.1
 - Add new unique jewelry with generic Spell Power bonuses: Ring of Omnipotence, Pendant of Acumen
 - Update some textures
+- Adjust villager trades
 
 # 1.3.7
 

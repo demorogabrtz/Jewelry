@@ -22,8 +22,60 @@ public class JewelryItems {
     public interface Factory {
         JewelryItem create(Item.Settings settings, String lore);
     }
-    public record Entry(Identifier id, Factory factory, Rarity rarity, ItemConfig.Item config, String lore, boolean fireproof) {  }
     public static final ArrayList<Entry> all = new ArrayList<>();
+    public static final class Entry {
+        private final Identifier id;
+        private final Factory factory;
+        private final Rarity rarity;
+        private final ItemConfig.Item config;
+        private final String lore;
+        private final boolean fireproof;
+
+        public JewelryItem item;
+
+        public Entry(Identifier id, Factory factory, Rarity rarity, ItemConfig.Item config, String lore, boolean fireproof) {
+            this.id = id;
+            this.factory = factory;
+            this.rarity = rarity;
+            this.config = config;
+            this.lore = lore;
+            this.fireproof = fireproof;
+        }
+
+        public Identifier id() {
+            return id;
+        }
+
+        public Factory factory() {
+            return factory;
+        }
+
+        public Rarity rarity() {
+            return rarity;
+        }
+
+        public ItemConfig.Item config() {
+            return config;
+        }
+
+        public String lore() {
+            return lore;
+        }
+
+        public boolean fireproof() {
+            return fireproof;
+        }
+
+        public JewelryItem create(Item.Settings settings) {
+            item = factory.create(settings, lore);
+            return item;
+        }
+
+        public JewelryItem item() {
+            return item;
+        }
+    }
+
     public static Entry add(Identifier id, ItemConfig.Item config) {
         return add(id, Rarity.COMMON, config, null, false);
     }
@@ -78,7 +130,7 @@ public class JewelryItems {
             )
     ));
 
-    public static Entry gold_ring = add(Identifier.of(JewelryMod.ID, "gold_ring"), new ItemConfig.Item(
+    public static Entry gold_ring = add(Identifier.of(JewelryMod.ID, "gold_ring"), Rarity.COMMON, true, new ItemConfig.Item(
             List.of(
             )
     ));
@@ -472,14 +524,17 @@ public class JewelryItems {
                 settings.fireproof();
             }
 
-            var item = entry.factory.create(settings, entry.lore());
+            var item = entry.create(settings);
+            // Passing attriubtes here instead Item.Settings, because Trinkets ignores `AttributeModifiersComponent`
             item.setConfigurableModifiers(attributes.build());
 
             Registry.register(Registries.ITEM, entry.id(), item);
-
-            ItemGroupEvents.modifyEntriesEvent(Group.KEY).register((content) -> {
-                content.add(item);
-            });
         }
+
+        ItemGroupEvents.modifyEntriesEvent(Group.KEY).register((content) -> {
+            for (var entry : all) {
+                content.add(entry.item());
+            }
+        });
     }
 }
