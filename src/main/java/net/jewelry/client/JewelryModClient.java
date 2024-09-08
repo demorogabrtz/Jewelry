@@ -6,7 +6,9 @@ import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.jewelry.api.JewelryItem;
 import net.jewelry.blocks.JewelryBlocks;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 
 import java.util.List;
@@ -18,7 +20,7 @@ public class JewelryModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(JewelryBlocks.JEWELERS_KIT.block(), RenderLayer.getCutout());
-        ItemTooltipCallback.EVENT.register((itemStack, context, lines) -> {
+        ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, lines) -> {
             removeTooltipDuplicates(itemStack, lines);
         });
     }

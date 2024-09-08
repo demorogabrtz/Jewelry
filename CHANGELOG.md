@@ -1,3 +1,9 @@
+# 2.0.0
+
+- Update to Minecraft 1.21.1
+- Add new unique jewelry with generic Spell Power bonuses: Ring of Omnipotence, Pendant of Acumen
+- Update some textures
+
 # 1.3.7
 
 - Make Netherite jewelry fireproof

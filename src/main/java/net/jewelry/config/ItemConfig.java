@@ -14,7 +14,7 @@ public class ItemConfig {
     public static class AttributeModifier { AttributeModifier() { }
         public String id = "";
         public float value = 0;
-        public EntityAttributeModifier.Operation operation = EntityAttributeModifier.Operation.ADDITION;
+        public EntityAttributeModifier.Operation operation = EntityAttributeModifier.Operation.ADD_VALUE;
 
         public AttributeModifier(Identifier id, float value, EntityAttributeModifier.Operation operation) {
             this(id.toString(), value, operation);

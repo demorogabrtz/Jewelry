@@ -3,17 +3,12 @@ package net.jewelry;
 import net.fabric_extras.structure_pool.api.StructurePoolAPI;
 import net.fabric_extras.structure_pool.api.StructurePoolConfig;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.jewelry.api.AttributeResolver;
 import net.jewelry.blocks.JewelryBlocks;
 import net.jewelry.config.Default;
 import net.jewelry.config.ItemConfig;
-import net.jewelry.config.LootConfig;
 import net.jewelry.items.Gems;
 import net.jewelry.items.Group;
 import net.jewelry.items.JewelryItems;
-import net.jewelry.util.LootHelper;
 import net.jewelry.util.SoundHelper;
 import net.jewelry.village.JewelryVillagers;
 import net.jewelry.worldgen.OreGeneration;
@@ -25,7 +20,7 @@ public class JewelryMod implements ModInitializer {
     public static final String ID = "jewelry";
 
     public static ConfigManager<ItemConfig> itemConfig = new ConfigManager<>
-            ("items_v4", Default.items)
+            ("items_v5", Default.items)
             .builder()
             .setDirectory(ID)
             .sanitize(true)
@@ -43,7 +38,6 @@ public class JewelryMod implements ModInitializer {
      */
     @Override
     public void onInitialize() {
-        AttributeResolver.setup();
         itemConfig.refresh();
         villageConfig.refresh();
 

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "M": {
+      "item": "minecraft:gold_ingot"
+    },
+    "G": {
+      "item": "jewelry:topaz"
+    }
+  },
+  "pattern": [
+    " G ",
+    "M M",
+    " N "
+  ],
+  "result": {
+    "id": "jewelry:netherite_topaz_ring"
+  }
+}

@@ -24,13 +24,13 @@ public class JewelryVillagers {
     public static final String JEWELER = "jeweler";
 
     public static PointOfInterestType registerPOI(String name, Block block) {
-        return PointOfInterestHelper.register(new Identifier(JewelryMod.ID, name),
+        return PointOfInterestHelper.register(Identifier.of(JewelryMod.ID, name),
                 1, 10, ImmutableSet.copyOf(block.getStateManager().getStates()));
     }
 
     public static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> workStation) {
-        var id = new Identifier(JewelryMod.ID, name);
-        return Registry.register(Registries.VILLAGER_PROFESSION, new Identifier(JewelryMod.ID, name), new VillagerProfession(
+        var id = Identifier.of(JewelryMod.ID, name);
+        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(JewelryMod.ID, name), new VillagerProfession(
                 id.toString(),
                 (entry) -> {
                     return entry.matchesKey(workStation);
@@ -74,51 +74,51 @@ public class JewelryVillagers {
         var wizardPOI = registerPOI(JEWELER, JewelryBlocks.JEWELERS_KIT.block());
         var wizardMerchantProfession = registerProfession(
                 JEWELER,
-                RegistryKey.of(Registries.POINT_OF_INTEREST_TYPE.getKey(), new Identifier(JewelryMod.ID, JEWELER)));
+                RegistryKey.of(Registries.POINT_OF_INTEREST_TYPE.getKey(), Identifier.of(JewelryMod.ID, JEWELER)));
 
-        List<Offer> wizardMerchantOffers = List.of(
-                Offer.buy(1, new ItemStack(Items.COPPER_INGOT, 8), 2, 8, 2, 0.1f),
-                Offer.buy(1, new ItemStack(Items.STRING, 7), 1, 6, 2, 0.1f),
-                Offer.sell(1, JewelryItems.copper_ring.item().getDefaultStack(), 4, 12, 3, 0.2f),
+//        List<Offer> wizardMerchantOffers = List.of(
+//                Offer.buy(1, new ItemStack(Items.COPPER_INGOT, 8), 2, 8, 2, 0.1f),
+//                Offer.buy(1, new ItemStack(Items.STRING, 7), 1, 6, 2, 0.1f),
+//                Offer.sell(1, JewelryItems.copper_ring.item().getDefaultStack(), 4, 12, 3, 0.2f),
+//
+//
+//                Offer.buy(2, new ItemStack(Items.GOLD_INGOT, 7), 2, 8, 5, 0.1f),
+//                Offer.sell(2, JewelryItems.iron_ring.item().getDefaultStack(), 4, 4, 4, 0.2f),
+//                Offer.sell(2, JewelryItems.gold_ring.item().getDefaultStack(), 18, 4, 5, 0.2f),
+//
+//                // Mediocre necklaces and material buys
+//
+//                Offer.buy(3, new ItemStack(Items.DIAMOND, 1), 4, 12, 10, 0.05f),
+//                Offer.sell(3, JewelryItems.emerald_necklace.item().getDefaultStack(), 20, 8, 10, 0.2f),
+//                Offer.sell(3, JewelryItems.diamond_necklace.item().getDefaultStack(), 25, 8, 10, 0.2f),
+//
+//                // T1 Rings
+//
+//                Offer.sell(4, JewelryItems.ruby_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
+//                Offer.sell(4, JewelryItems.topaz_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
+//                Offer.sell(4, JewelryItems.citrine_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
+//                Offer.sell(4, JewelryItems.jade_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
+//                Offer.sell(4, JewelryItems.sapphire_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
+//                Offer.sell(4, JewelryItems.tanzanite_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
+//
+//                // T1 Necklaces
+//
+//                Offer.sell(5, JewelryItems.ruby_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
+//                Offer.sell(5, JewelryItems.topaz_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
+//                Offer.sell(5, JewelryItems.citrine_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
+//                Offer.sell(5, JewelryItems.jade_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
+//                Offer.sell(5, JewelryItems.sapphire_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
+//                Offer.sell(5, JewelryItems.tanzanite_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f)
+//        );
 
-
-                Offer.buy(2, new ItemStack(Items.GOLD_INGOT, 7), 2, 8, 5, 0.1f),
-                Offer.sell(2, JewelryItems.iron_ring.item().getDefaultStack(), 4, 4, 4, 0.2f),
-                Offer.sell(2, JewelryItems.gold_ring.item().getDefaultStack(), 18, 4, 5, 0.2f),
-
-                // Mediocre necklaces and material buys
-
-                Offer.buy(3, new ItemStack(Items.DIAMOND, 1), 4, 12, 10, 0.05f),
-                Offer.sell(3, JewelryItems.emerald_necklace.item().getDefaultStack(), 20, 8, 10, 0.2f),
-                Offer.sell(3, JewelryItems.diamond_necklace.item().getDefaultStack(), 25, 8, 10, 0.2f),
-
-                // T1 Rings
-
-                Offer.sell(4, JewelryItems.ruby_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
-                Offer.sell(4, JewelryItems.topaz_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
-                Offer.sell(4, JewelryItems.citrine_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
-                Offer.sell(4, JewelryItems.jade_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
-                Offer.sell(4, JewelryItems.sapphire_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
-                Offer.sell(4, JewelryItems.tanzanite_ring.item().getDefaultStack(), 35, 5, 13, 0.1f),
-
-                // T1 Necklaces
-
-                Offer.sell(5, JewelryItems.ruby_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
-                Offer.sell(5, JewelryItems.topaz_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
-                Offer.sell(5, JewelryItems.citrine_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
-                Offer.sell(5, JewelryItems.jade_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
-                Offer.sell(5, JewelryItems.sapphire_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f),
-                Offer.sell(5, JewelryItems.tanzanite_necklace.item().getDefaultStack(), 45, 3, 13, 0.1f)
-        );
-
-        for(var offer: wizardMerchantOffers) {
-            TradeOfferHelper.registerVillagerOffers(wizardMerchantProfession, offer.level, factories -> {
-                factories.add(((entity, random) -> new TradeOffer(
-                        offer.input,
-                        offer.output,
-                        offer.maxUses, offer.experience, offer.priceMultiplier)
-                ));
-            });
-        }
+//        for(var offer: wizardMerchantOffers) {
+//            TradeOfferHelper.registerVillagerOffers(wizardMerchantProfession, offer.level, factories -> {
+//                factories.add(((entity, random) -> new TradeOffer(
+//                        offer.input,
+//                        offer.output,
+//                        offer.maxUses, offer.experience, offer.priceMultiplier)
+//                ));
+//            });
+//        }
     }
 }
