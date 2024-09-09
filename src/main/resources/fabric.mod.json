@@ -30,9 +30,10 @@
   "depends": {
     "fabricloader": ">=0.14.20",
     "fabric": "*",
-    "minecraft": "${minecraft_version}",
+    "minecraft": ">=${minecraft_compat_version}",
     "spell_power": "*",
-    "ranged_weapon_api": ">=1.1.0"
+    "ranged_weapon_api": "*",
+    "structure_pool_api": "*"
   },
   "custom": {
     "modmenu": {

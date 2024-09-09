@@ -113,8 +113,8 @@ public class JewelryItems {
     public static final String GENERIC_ATTACK_SPEED = "generic.attack_speed";
     public static final String GENERIC_ARMOR_TOUGHNESS = "generic.armor_toughness";
     public static final String GENERIC_KNOCKBACK_RESISTANCE = "generic.knockback_resistance";
-    public static final String COMBATROLL_RECHARGE = "combatroll:recharge";
-    public static final String COMBATROLL_COUNT = "combatroll:count";
+    public static final String COMBATROLL_RECHARGE = "combat_roll:recharge";
+    public static final String COMBATROLL_COUNT = "combat_roll:count";
 
     // MARK: Rings
 
