@@ -28,9 +28,9 @@
     "jewelry.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.20",
-    "fabric": "*",
     "minecraft": ">=${minecraft_compat_version}",
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric": "*",
     "spell_power": "*",
     "ranged_weapon_api": "*",
     "structure_pool_api": "*"
