@@ -1,3 +1,7 @@
+# 2.0.2
+
+- Fix gem vein loot tables
+
 # 2.0.1
 
 - Fix Combat Roll attribute references
